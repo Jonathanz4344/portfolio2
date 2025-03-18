@@ -21,16 +21,29 @@ const ProfileText = ({ visible, titleId }) => (
       <DecoderText text="Hi there" start={visible} delay={500} />
     </Heading>
     <Text className={styles.description} data-visible={visible} size="l" as="p">
-      I’m Hamish, currently I live in Sydney working as a senior product designer at{' '}
-      <Link href="https://www.qwilr.com">Qwilr</Link>. My projects include UX design, UI
-      animations, and icon illustration. Being comfortable with code allows me to rapidly
-      prototype and validate experiences. If you’re interested in the tools and software I
-      use check out my <Link href="/uses">uses page</Link>.
+      I’m Jonathan, a passionate Full Stack Engineer with expertise in building modern web
+      applications, scalable backend systems, and cloud-based solutions.
+    </Text>
+
+    <Text className={styles.description} data-visible={visible} size="l" as="p">
+      I specialize in React.js, Node.js, Python, and SQL, leveraging cloud platforms like
+      AWS (EC2, S3, RDS) to develop high-performance applications. With experience in
+      full-stack development, CI/CD automation, and API integrations, I have engineered
+      solutions that enhance user engagement, streamline workflows, and optimize system
+      performance.
+      {/* <Link href="/uses">uses page</Link>. */}
     </Text>
     <Text className={styles.description} data-visible={visible} size="l" as="p">
-      In my spare time I like to practice Brazilian Jiu Jitsu, play video games, and{' '}
-      <Link href="/projects/volkihar-knight">make mods</Link>. I’m always down for hearing
-      about new projects, so feel free to drop me a line.
+      Currently, I’m leading the development of digital solutions at Citywide Eye Care,
+      where I’ve built interactive user interfaces, automated inventory systems, and
+      optimized cloud deployments to ensure seamless scalability and security. My past
+      experience at ADP involved improving CI/CD efficiency, automating workflows, and
+      enhancing database performance.
+    </Text>
+    <Text className={styles.description} data-visible={visible} size="l" as="p">
+      Beyond work, I enjoy experimenting with AI-driven applications, optimizing DevOps
+      pipelines, and playing video games. Feel free to connect if you’d like to chat about
+      new projects, collaboration, or tech in general!
     </Text>
   </Fragment>
 );
