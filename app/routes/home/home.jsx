@@ -7,11 +7,9 @@ import gamestackTexture from '~/assets/bookingMobile.png';
 import sliceTextureLarge from '~/assets/intune-first-image-large.jpg';
 import sliceTexturePlaceholder from '~/assets/intune-first-image-placeholder.jpg';
 import sliceTexture from '~/assets/intune-first-image.jpg';
-
 import sprTextureLarge from '~/assets/spr-lesson-builder-dark-large.png';
 import sprTexturePlaceholder from '~/assets/spr-lesson-builder-dark-placeholder.jpg';
 import sprTexture from '~/assets/spr-lesson-builder-dark.png';
-
 import { Footer } from '~/components/footer';
 import { baseMeta } from '~/utils/meta';
 import { Intro } from './intro';
