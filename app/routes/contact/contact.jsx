@@ -85,7 +85,7 @@ export async function action({ context, request }) {
           Data: `Portfolio message from ${email}`,
         },
       },
-      Source: `Portfolio <${context.cloudflare.env.FROM_EMAIL}>`,
+      Source: `Portfolio2 <${context.cloudflare.env.FROM_EMAIL}>`,
       ReplyToAddresses: [email],
     })
   );
