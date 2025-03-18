@@ -1,26 +1,26 @@
-import sliceAnnotationLarge from '~/assets/slice-annotation-large.png';
-import sliceAnnotationPlaceholder from '~/assets/slice-annotation-placeholder.png';
-import sliceAnnotation from '~/assets/slice-annotation.png';
-import sliceAppLarge from '~/assets/slice-app-large.jpg';
-import sliceAppPlaceholder from '~/assets/slice-app-placeholder.jpg';
-import sliceApp from '~/assets/slice-app.jpg';
-import sliceBackgroundBarLarge from '~/assets/slice-background-bar-large.jpg';
-import sliceBackgroundBarPlaceholder from '~/assets/slice-background-bar-placeholder.jpg';
-import sliceBackgroundBar from '~/assets/slice-background-bar.jpg';
-import sliceBackgroundLarge from '~/assets/slice-background-large.jpg';
-import sliceBackgroundPlaceholder from '~/assets/slice-background-placeholder.jpg';
-import sliceBackground from '~/assets/slice-background.jpg';
-import sliceIrlPlaceholder from '~/assets/slice-irl-placeholder.jpg';
-import sliceIrl from '~/assets/slice-irl.jpg';
-import sliceSidebarAnnotationsLarge from '~/assets/slice-sidebar-annotations-large.png';
-import sliceSidebarAnnotationsPlaceholder from '~/assets/slice-sidebar-annotations-placeholder.png';
-import sliceSidebarAnnotations from '~/assets/slice-sidebar-annotations.png';
-import sliceSidebarLayersLarge from '~/assets/slice-sidebar-layers-large.png';
-import sliceSidebarLayersPlaceholder from '~/assets/slice-sidebar-layers-placeholder.png';
-import sliceSidebarLayers from '~/assets/slice-sidebar-layers.png';
-import sliceSlidesLarge from '~/assets/slice-slides-large.jpg';
-import sliceSlidesPlaceholder from '~/assets/slice-slides-placeholder.jpg';
-import sliceSlides from '~/assets/slice-slides.jpg';
+import sliceAnnotationLarge from '~/assets/intune-cart-large.png';
+import sliceAnnotationPlaceholder from '~/assets/intune-cart-placeholder.png';
+import sliceAnnotation from '~/assets/intune-cart.png';
+import sliceAppLarge from '~/assets/intune-first-image-large.jpg';
+import sliceAppPlaceholder from '~/assets/intune-first-image-placeholder.jpg';
+import sliceApp from '~/assets/intune-first-image.jpg';
+import sliceBackgroundBarLarge from '~/assets/intune-checkout-large.jpg';
+import sliceBackgroundBarPlaceholder from '~/assets/intune-checkout-placeholder.jpg';
+import sliceBackgroundBar from '~/assets/intune-checkout.jpg';
+import sliceBackgroundLarge from '~/assets/intune-background-large.jpg';
+import sliceBackgroundPlaceholder from '~/assets/intune-background-placeholder.jpg';
+import sliceBackground from '~/assets/intune-background.jpg';
+import sliceIrlPlaceholder from '~/assets/intune-lesson-placeholder.jpg';
+import sliceIrl from '~/assets/intune-lesson.jpg';
+import sliceSidebarAnnotationsLarge from '~/assets/intune-admin-lesson-large.png';
+import sliceSidebarAnnotationsPlaceholder from '~/assets/intune-admin-lesson-placeholder.png';
+import sliceSidebarAnnotations from '~/assets/intune-admin-lesson.png';
+import sliceSidebarLayersLarge from '~/assets/intune-admin-product.png';
+import sliceSidebarLayersPlaceholder from '~/assets/intune-admin-product-placeholder.png';
+import sliceSidebarLayers from '~/assets/intune-admin-product.png';
+import sliceSlidesLarge from '~/assets/intune-product-large.jpg';
+import sliceSlidesPlaceholder from '~/assets/intune-product-placeholder.jpg';
+import sliceSlides from '~/assets/intune-product.jpg';
 import { Footer } from '~/components/footer';
 import { Image } from '~/components/image';
 import {
@@ -40,9 +40,9 @@ import { media } from '~/utils/style';
 import { baseMeta } from '~/utils/meta';
 import styles from './slice.module.css';
 
-const title = 'Biomedical image collaboration';
+const title = 'Intune';
 const description =
-  'This project involved designing a better way for biomedical educators and learners to annotate digital slides together.';
+  ' Welcome to InTune, your premier destination for all things musical! Our e-commerce website offers a wide array of options, including purchasing, renting, reviewing, and even taking lessons for musical instruments. With an extensive selection to explore, dive into our website today to discover the perfect harmony for your musical aspirations.';
 const roles = ['User Research', 'UX Design', 'Interface Design'];
 
 export const meta = () => {
@@ -64,7 +64,7 @@ export const Slice = () => {
         <ProjectHeader
           title={title}
           description={description}
-          url="https://www.best.edu.au/s/q2yjjvl7?data=8%404!9%4020303!10%40-15087&version=1"
+          url="https://github.com/Jonathanz4344/inTune"
           roles={roles}
         />
         <ProjectSection padding="top">
@@ -82,17 +82,15 @@ export const Slice = () => {
         <ProjectSection>
           <ProjectSectionColumns centered className={styles.columns}>
             <div className={styles.imagesText}>
-              <ProjectSectionHeading>Bringing it together</ProjectSectionHeading>
+              <ProjectSectionHeading>User/admin page</ProjectSectionHeading>
               <ProjectSectionText>
-                Teachers needed a better way to create collaborative group activities by
-                annotating slides on Slice. Before starting this project, a layer could
-                only be annotated by a single user, making it difficult for learners to
-                work together.
+                Empowering users with versatile access control, enabling them to
+                seamlessly browse the website for purchasing, renting, reviewing, and
+                accessing lessons. Meanwhile, administrators wield comprehensive control,
+                facilitating actions such as adding instruments, fine-tuning quantities,
+                and crafting or refining lessons with effortless precision.
               </ProjectSectionText>
-              <ProjectSectionText>
-                Our solution was to allow users to be invited to a layer, where they can
-                see others’ annotations and make their own.
-              </ProjectSectionText>
+              <ProjectSectionText>{/* if need additional text */}</ProjectSectionText>
             </div>
             <div className={styles.sidebarImages}>
               <Image
@@ -119,18 +117,17 @@ export const Slice = () => {
         <ProjectSection light>
           <ProjectSectionContent>
             <ProjectTextRow>
-              <ProjectSectionHeading>Improving the experience</ProjectSectionHeading>
+              <ProjectSectionHeading>Product Page</ProjectSectionHeading>
               <ProjectSectionText>
-                A problem we heard about often form users was that it was difficult to
-                find images they had previously seen or worked on. To solve this we added
-                a new tab that lists all previously annotated slides. In addition, we
-                added the ability to favorite slides, so if users find an interesting
-                slide they want to annotate later, they can easily save it to their
-                account.
+                The product page showcases a diverse array of instruments currently in
+                stock, complete with detailed descriptions and pricing information. A
+                user-friendly search bar enhances the browsing experience, offering
+                comprehensive filtering options to search by instrument name or select
+                specific instrument families.
               </ProjectSectionText>
             </ProjectTextRow>
             <Image
-              srcSet={`${sliceSlides} 800w, ${sliceSlidesLarge} 1920w`}
+              srcSet={`${sliceSlides} 800w, ${sliceSlidesLarge} 19w`}
               width={800}
               height={500}
               placeholder={sliceSlidesPlaceholder}
@@ -165,13 +162,13 @@ export const Slice = () => {
               </div>
             </div>
             <div className={styles.gridText}>
-              <ProjectSectionHeading>Meaningful details</ProjectSectionHeading>
+              <ProjectSectionHeading>Cart/Checkout</ProjectSectionHeading>
               <ProjectSectionText>
-                Marking and annotating areas on high resolution biomedical images is the
-                core experience of the app, and it was easy to get lost or lose sense of
-                scale when zooming in on details. Adding measurements for the perimeter
-                and area of an annotation both helped to communicate the overall scale of
-                the image and how large the annotated feature is in comparison.
+                Comprehensive shopping cart featuring clear product images, item names,
+                prices, and quantities for a seamless checkout process. The checkout page
+                is designed to accommodate your needs, allowing you to effortlessly input
+                personal information including address, name, and credit card details to
+                finalize your purchase.
               </ProjectSectionText>
             </div>
           </ProjectSectionContent>
@@ -179,13 +176,13 @@ export const Slice = () => {
         <ProjectSection>
           <ProjectSectionContent>
             <ProjectTextRow>
-              <ProjectSectionHeading>Project outcomes</ProjectSectionHeading>
+              <ProjectSectionHeading>Lessons</ProjectSectionHeading>
               <ProjectSectionText>
-                Real-time collaborative annotation facilitated better collaboration
-                between learners, and was much easier to run group exercises with the new
-                shared layers feature. Learners gave feedback that is was enjoyable to
-                work together and see what others were doing, and liked how interactive
-                and easy to use the application was.
+                Explore our lesson page, where you can conveniently schedule sessions with
+                an instructor tailored to your specific instrument. Whether you're a
+                beginner or advanced musician, our platform provides an intuitive
+                interface for arranging personalized lessons that cater to your musical
+                journey.
               </ProjectSectionText>
             </ProjectTextRow>
             <Image

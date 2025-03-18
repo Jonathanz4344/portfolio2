@@ -1,15 +1,15 @@
-import gamestackTexture2Large from '~/assets/gamestack-list-large.jpg';
-import gamestackTexture2Placeholder from '~/assets/gamestack-list-placeholder.jpg';
-import gamestackTexture2 from '~/assets/gamestack-list.jpg';
-import gamestackTextureLarge from '~/assets/gamestack-login-large.jpg';
-import gamestackTexturePlaceholder from '~/assets/gamestack-login-placeholder.jpg';
-import gamestackTexture from '~/assets/gamestack-login.jpg';
-import sliceTextureLarge from '~/assets/slice-app-large.jpg';
-import sliceTexturePlaceholder from '~/assets/slice-app-placeholder.jpg';
-import sliceTexture from '~/assets/slice-app.jpg';
-import sprTextureLarge from '~/assets/spr-lesson-builder-dark-large.jpg';
+import gamestackTexture2Large from '~/assets/aiChatbot.png';
+import gamestackTexture2Placeholder from '~/assets/aiChatbot.png';
+import gamestackTexture2 from '~/assets/aiChatbot.png';
+import gamestackTextureLarge from '~/assets/bookingMobile.png';
+import gamestackTexturePlaceholder from '~/assets/bookingMobile.png';
+import gamestackTexture from '~/assets/bookingMobile.png';
+import sliceTextureLarge from '~/assets/intune-first-image-large.jpg';
+import sliceTexturePlaceholder from '~/assets/intune-first-image-placeholder.jpg';
+import sliceTexture from '~/assets/intune-first-image.jpg';
+import sprTextureLarge from '~/assets/spr-lesson-builder-dark-large.png';
 import sprTexturePlaceholder from '~/assets/spr-lesson-builder-dark-placeholder.jpg';
-import sprTexture from '~/assets/spr-lesson-builder-dark.jpg';
+import sprTexture from '~/assets/spr-lesson-builder-dark.png';
 import { Footer } from '~/components/footer';
 import { baseMeta } from '~/utils/meta';
 import { Intro } from './intro';
@@ -124,10 +124,10 @@ export const Home = () => {
         sectionRef={projectTwo}
         visible={visibleSections.includes(projectTwo.current)}
         index={2}
-        title="Video game progress tracking"
-        description="Design and development for a video game tracking app built in React Native"
+        title="Citywide Eye Care Mobile"
+        description="Responsive mobile experience featuring an AI-powered chatbot using Google Gemini 2.0 for intelligent assistance and a streamlined booking system for appointment scheduling on the go"
         buttonText="View website"
-        buttonLink="https://gamestack.hamishw.com"
+        buttonLink="https://gamestack.hamishw.com" 
         model={{
           type: 'phone',
           alt: 'App login screen',
@@ -148,8 +148,9 @@ export const Home = () => {
         sectionRef={projectThree}
         visible={visibleSections.includes(projectThree.current)}
         index={3}
-        title="Biomedical image collaboration"
-        description="Increasing the amount of collaboration in Slice, an app for biomedical imaging"
+        title="Intune"
+        description="InTune, an immersive e-commerce website that revolutionizes the way users buy, rent, review, and take lessons
+        for musical instruments."
         buttonText="View project"
         buttonLink="/projects/slice"
         model={{
