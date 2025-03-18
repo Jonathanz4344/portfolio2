@@ -13,12 +13,13 @@ import { useState, useEffect } from 'react';
 import { formatDate } from '~/utils/date';
 import { classes, cssProps } from '~/utils/style';
 import styles from './articles.module.css';
+import resumePDF from './resume.pdf';
 
 function ArticlesPost({ slug, frontmatter, timecode, index }) {
   const [hovered, setHovered] = useState(false);
   const [dateTime, setDateTime] = useState(null);
   const reduceMotion = useReducedMotion();
-  const { title, abstract, date, featured, banner } = frontmatter;
+  const { title, abstract, date, featured, banner, location } = frontmatter;
 
   useEffect(() => {
     setDateTime(formatDate(date));
@@ -55,35 +56,89 @@ function ArticlesPost({ slug, frontmatter, timecode, index }) {
           />
         </div>
       )}
-      <RouterLink
-        unstable_viewTransition
-        prefetch="intent"
-        to={`/articles/${slug}`}
-        className={styles.postLink}
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
-      >
-        <div className={styles.postDetails}>
-          <div aria-hidden className={styles.postDate}>
-            <Divider notchWidth="64px" notchHeight="8px" />
-            {dateTime}
-          </div>
-          <Heading as="h2" level={featured ? 2 : 4}>
-            {title}
-          </Heading>
-          <Text size={featured ? 'l' : 's'} as="p">
-            {abstract}
-          </Text>
-          <div className={styles.postFooter}>
-            <Button secondary iconHoverShift icon="chevron-right" as="div">
-              Read article
-            </Button>
-            <Text className={styles.timecode} size="s">
-              {timecode}
+      {banner && (
+        <RouterLink
+          unstable_viewTransition
+          prefetch="intent"
+          to={`/articles/${slug}`}
+          className={styles.postLink}
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+        >
+          <div className={styles.postDetails}>
+            <div aria-hidden className={styles.postDate}>
+              <Divider notchWidth="64px" notchHeight="8px" />
+              {dateTime}
+            </div>
+            <Heading as="h2" level={featured ? 2 : 4}>
+              {title}
+            </Heading>
+            <Text size={featured ? 'l' : 's'} as="p">
+              {location}
             </Text>
+            <Text size={featured ? 'l' : 's'} as="p">
+              {abstract}
+            </Text>
+            <div className={styles.postFooter}>
+              {featured && !!banner && (
+                <a href={resumePDF} download="Resume" target="blank">
+                  <Button secondary iconHoverShift as="div">
+                    View CV
+                  </Button>
+                </a>
+              )}
+              {!featured && banner && (
+                <Button secondary iconHoverShift icon="chevron-right" as="div">
+                  See more
+                </Button>
+              )}
+
+              <Text className={styles.timecode} size="s">
+                {timecode}
+              </Text>
+            </div>
+          </div>
+        </RouterLink>
+      )}
+
+      {featured && !!banner && (
+        <div className={styles.postLink}>
+          <div className={styles.postDetails}>
+            {/* <div aria-hidden className={styles.postDate}>
+              <Divider notchWidth="64px" notchHeight="8px" />
+              {dateTime}
+            </div> */}
+            {/* <Heading as="h2" level={featured ? 2 : 4}>
+              {title}
+            </Heading> */}
+            {/* <Text size={featured ? 'l' : 's'} as="p">
+              {location}
+            </Text> */}
+            {/* <Text size={featured ? 'l' : 's'} as="p">
+              {abstract}
+            </Text> */}
+            <div className={styles.postFooter}>
+              {featured && !!banner && (
+                <a href={resumePDF} download="Resume" target="blank">
+                  <Button secondary iconHoverShift as="div">
+                    Download CV
+                  </Button>
+                </a>
+              )}
+              {/* {!featured && banner && (
+                <Button secondary iconHoverShift icon="chevron-right" as="div">
+                  See more
+                </Button>
+              )} */}
+
+              <Text className={styles.timecode} size="s">
+                {timecode}
+              </Text>
+            </div>
           </div>
         </div>
-      </RouterLink>
+      )}
+
       {featured && (
         <Text aria-hidden className={styles.postTag} size="s">
           477
@@ -121,7 +176,7 @@ function SkeletonPost({ index }) {
           />
           <div className={styles.postFooter}>
             <Button secondary iconHoverShift icon="chevron-right" as="div">
-              Read more
+              See more
             </Button>
             <Text className={styles.timecode} size="s">
               00:00:00:00
@@ -142,7 +197,7 @@ export function Articles() {
   const postsHeader = (
     <header className={styles.header}>
       <Heading className={styles.heading} level={5} as="h1">
-        <DecoderText text="Latest articles" />
+        <DecoderText text="Work Experience" />
       </Heading>
       <Barcode className={styles.barcode} />
     </header>
