@@ -1,93 +1,156 @@
-@layer layout {
-  /* Custom styles for the resume page */
-  .resumeContent {
-    /* Increase line height for better readability */
-    --lineHeightBody: 1.8;
-  }
+:root {
+  --primary: #01b3e3;
+  --primaryDark: #0095c0;
+  --text: #ffffff;
+  --background: #2c1c2c;
+  --secondaryBackground: #3d2a3d;
+  --spaceM: 5px;
+  --spaceL: 10px;
+  --spaceXL: 16px;
+  --space2XL: 24px;
+  --space3XL: 32px;
+  --space4XL: 48px;
+  --fontWeightBold: 600;
+  --lineHeightBody: 1.8;
+}
 
-  /* Enhance spacing between sections */
-  .resumeContent hr {
-    margin: var(--space4XL) 0;
-    border-top: 1px solid color-mix(in lab, var(--text) 30%, transparent);
-  }
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--background);
+  color: var(--text);
+  margin: 0;
+  padding: 20px;
+  line-height: var(--lineHeightBody);
+}
 
-  /* Add extra spacing after horizontal rules */
-  .resumeContent hr + * {
-    margin-top: var(--space3XL) !important;
-  }
+.resumeContent {
+  max-width: 800px;
+  margin: 0 auto;
+}
 
-  /* Improve heading styles */
+.resumeContent h2 {
+  margin-top: var(--space3XL);
+  margin-bottom: var(--space2XL);
+  color: var(--text);
+  font-weight: var(--fontWeightBold);
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  border-bottom: none;
+}
+
+.resumeContent hr {
+  margin: var(--space4XL) 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: none;
+}
+
+.resumeContent hr + * {
+  margin-top: var(--space3XL) !important;
+}
+
+.resumeContent ul {
+  margin-top: var(--spaceL);
+  margin-bottom: var(--spaceXL);
+  padding-left: 20px;
+  list-style-type: none;
+}
+
+.resumeContent li {
+  margin-bottom: var(--spaceM);
+  position: relative;
+  padding-left: 15px;
+}
+
+.resumeContent li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+}
+
+.contact-section a {
+  display: block;
+  margin-bottom: var(--spaceM);
+  color: var(--text);
+  text-decoration: none;
+  padding-left: 25px;
+  position: relative;
+}
+
+.contact-section a::before {
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+}
+
+.contact-section a.phone::before {
+  content: "📞";
+}
+
+.contact-section a.email::before {
+  content: "✉️";
+}
+
+.contact-section a.linkedin::before {
+  content: "🔗";
+}
+
+.contact-section a.github::before {
+  content: "🔗";
+}
+
+.job-title {
+  font-weight: var(--fontWeightBold);
+  color: var(--primary);
+}
+
+.job-period {
+  color: #cccccc;
+  font-size: 0.9rem;
+}
+
+.experience-item {
+  margin-bottom: var(--space2XL);
+}
+
+.company-name {
+  font-weight: var(--fontWeightBold);
+  margin-bottom: 5px;
+}
+
+strong {
+  color: var(--primaryDark);
+  font-weight: var(--fontWeightBold);
+}
+
+/* Add some emphasis to important text */
+.resumeContent strong {
+  color: var(--primaryDark);
+  font-weight: var(--fontWeightBold);
+}
+
+/* Add consistent spacing before horizontal rules */
+.resumeContent * + hr {
+  margin-top: var(--space3XL) !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
   .resumeContent h2 {
-    margin-top: var(--space3XL);
-    margin-bottom: var(--spaceXL);
-    color: var(--primary);
-    font-weight: var(--fontWeightBold);
+    margin-top: var(--space2XL);
+    margin-bottom: var(--spaceL);
   }
 
   .resumeContent h3 {
-    margin-top: var(--space2XL);
-    margin-bottom: var(--spaceL);
-    color: var(--text);
+    margin-top: var(--spaceXL);
+    margin-bottom: var(--spaceM);
   }
 
-  /* Enhance paragraph spacing */
-  .resumeContent p {
-    margin-bottom: var(--spaceL);
+  .resumeContent hr {
+    margin: var(--space3XL) 0;
   }
-
-  /* Improve list styling */
-  .resumeContent ul {
-    margin-top: var(--spaceL);
-    margin-bottom: var(--spaceXL);
-  }
-
-  .resumeContent li {
-    margin-bottom: var(--spaceS);
-    position: relative;
-  }
-
-  /* Style the contact section */
-  .resumeContent p:has(a) {
-    display: block;
-    margin-bottom: var(--spaceL);
-  }
-
-  /* Format links with proper underlines */
-  .resumeContent p a {
-    display: inline;
-    margin-right: var(--spaceL);
-    text-decoration: underline;
-  }
-
-  /* Add consistent spacing before horizontal rules */
-  .resumeContent * + hr {
-    margin-top: var(--space3XL) !important;
-  }
-
-  /* Add some emphasis to important text */
-  .resumeContent strong {
-    color: var(--primaryDark);
-    font-weight: var(--fontWeightBold);
-  }
-
-  /* Responsive adjustments */
-  @media (--mediaMobile) {
-    .resumeContent h2 {
-      margin-top: var(--space2XL);
-      margin-bottom: var(--spaceL);
-    }
-
-    .resumeContent h3 {
-      margin-top: var(--spaceXL);
-      margin-bottom: var(--spaceM);
-    }
-
-    .resumeContent hr {
-      margin: var(--space3XL) 0;
-    }
-    
-    .resumeContent hr + * {
-      margin-top: var(--space2XL) !important;
-    }
+  
+  .resumeContent hr + * {
+    margin-top: var(--space2XL) !important;
   }
 }

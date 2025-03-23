@@ -196,7 +196,7 @@ const articlesData = {
       timecode: '08:2024-05:2025',
       frontmatter: {
         title: 'Full Stack Engineer Intern @ Citywide Eye Care',
-        abstract: 'Engineered a React.js & Material-UI interface, developed a scalable inventory system using Python & PostgreSQL, optimized cloud deployment on AWS, implemented AWS Secrets Manager, and automated online form processing, accelerating data handling by 35%.',
+        abstract: 'During my Full Stack Engineer Internship at Citywide Eye Care, I designed and deployed a scalable full-stack solution to modernize clinic operations. I developed an interactive, user-friendly interface using React.js and Material-UI, increasing patient engagement by 87% based on user feedback. I implemented an efficient inventory management system with Python and PostgreSQL, reducing stock discrepancies by 30%. Additionally, I optimized AWS cloud services (EC2, S3, RDS) to achieve 99.9% uptime while enhancing data security by integrating AWS Secrets Manager. I also automated online form processing workflows, improving data handling speed by 35% and reducing staff response time by 30%.',
         date: '2024-08-01',
         featured: false,
         banner: '/static/hello-world-banner.jpg',
@@ -208,7 +208,7 @@ const articlesData = {
       timecode: '05:2024-07:2024',
       frontmatter: {
         title: 'Software Engineer Intern @ Citywide Eye Care',
-        abstract: 'Migrated the clinic\'s website from Google Sites to React.js, developed a responsive UI using React.js & Material-UI, integrated an automated appointment booking system, and enhanced user experience & navigation, leading to a 25% increase in patient appointments.',
+        abstract: 'As a Software Engineer Intern at Citywide Eye Care, I led the digital transformation of the clinic\'s website, migrating it from Google Sites to a dynamic, responsive React.js platform. I crafted a modern, accessible UI using React.js and Material-UI, ensuring seamless usability across desktop and mobile devices. I integrated an automated appointment booking system, streamlining the scheduling process and reducing administrative workload. These enhancements contributed to a 25% increase in patient appointments and significantly improved overall user experience and engagement.',
         date: '2024-05-01',
         featured: false,
         banner: '/static/hello-world-banner.jpg',
@@ -220,7 +220,7 @@ const articlesData = {
       timecode: '06:2023-08:2023',
       frontmatter: {
         title: 'Application Developer Intern @ ADP',
-        abstract: 'Designed and implemented an Automated Status Report, optimized CI/CD pipeline using Jenkins, enhanced MySQL database performance through query optimization, extracted and integrated data from AWS, Splunk, and Dynatrace, and automated manual workflows, increasing team productivity by 71%.',
+        abstract: 'Unlocking the power of real-time cost insights and streamlined deployment processes, my internship at ADP revolutionized decision-making by reducing time by 20% and increasing cost-effectiveness by 15%. Delve deeper into how I optimized querying speed, integrated AWS data, and automated manual processes to achieve a remarkable 71% boost in productivity across ADP\'s EFS teams.',
         date: '2023-06-01',
         featured: false,
         banner: '/static/hello-world-banner.jpg',

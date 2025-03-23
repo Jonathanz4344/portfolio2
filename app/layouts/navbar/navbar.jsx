@@ -153,9 +153,9 @@ export const Navbar = () => {
       <NavToggle onClick={() => setMenuOpen(!menuOpen)} menuOpen={menuOpen} />
       <nav className={styles.nav}>
         <div className={styles.navList}>
-          {navLinks.map(({ label, pathname }) => (
+          {navLinks.map(({ label, pathname, hash }) => (
             <RouterLink
-              to={pathname}
+              to={hash ? `${pathname}${hash}` : pathname}
               key={label}
               data-navbar-item
               className={styles.navLink}
@@ -171,9 +171,9 @@ export const Navbar = () => {
       <Transition unmount in={menuOpen} timeout={msToNum(tokens.base.durationL)}>
         {({ visible, nodeRef }) => (
           <nav className={styles.mobileNav} data-visible={visible} ref={nodeRef}>
-            {navLinks.map(({ label, pathname }, index) => (
+            {navLinks.map(({ label, pathname, hash }, index) => (
               <RouterLink
-                to={pathname}
+                to={hash ? `${pathname}${hash}` : pathname}
                 key={label}
                 className={styles.mobileNavLink}
                 data-visible={visible}

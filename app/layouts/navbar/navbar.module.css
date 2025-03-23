@@ -128,8 +128,8 @@
     align-items: center;
     justify-content: center;
     padding: var(--spaceS);
-    width: var(--space2XL);
-    height: var(--space2XL);
+    width: var(--space3XL);
+    height: var(--space3XL);
     color: var(--textLight);
     transition: color var(--durationM) var(--bezierFastoutSlowin);
 
@@ -142,6 +142,8 @@
   .navIcon {
     fill: currentColor;
     transition: fill var(--durationM) ease;
+    width: 24px;
+    height: 24px;
   }
 
   .mobileNav {
