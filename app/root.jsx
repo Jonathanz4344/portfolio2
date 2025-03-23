@@ -102,24 +102,14 @@ export default function App() {
 
   function toggleTheme(newTheme) {
     const nextTheme = newTheme ? newTheme : theme === 'dark' ? 'light' : 'dark';
-    
+
     // Update localStorage immediately for client-side consistency
     localStorage.setItem('theme', nextTheme);
     setTheme(nextTheme);
-    
-    // Also update the server-side state via the API
-    fetcher.submit(
-      { theme: nextTheme },
-      { action: '/api/set-theme', method: 'post' }
-    );
-  }
 
-  useEffect(() => {
-    console.info(
-      `${config.ascii}\n`,
-      `Taking a peek huh? Check out the source code: ${config.repo}\n\n`
-    );
-  }, []);
+    // Also update the server-side state via the API
+    fetcher.submit({ theme: nextTheme }, { action: '/api/set-theme', method: 'post' });
+  }
 
   return (
     <html lang="en">

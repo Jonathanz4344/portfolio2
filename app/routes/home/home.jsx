@@ -127,7 +127,7 @@ export const Home = () => {
         title="Citywide Eye Care Mobile"
         description="Responsive mobile experience featuring an AI-powered chatbot using Google Gemini 2.0 for intelligent assistance and a streamlined booking system for appointment scheduling on the go"
         buttonText="View website"
-        buttonLink="https://gamestack.hamishw.com" 
+        buttonLink="https://staging.d1vmjconkw6u44.amplifyapp.com/"
         model={{
           type: 'phone',
           alt: 'App login screen',
