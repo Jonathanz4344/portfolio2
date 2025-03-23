@@ -229,3 +229,6 @@ export function VolkiharKnight() {
     </Fragment>
   );
 }
+
+// Add default export for the VolkiharKnight component
+export default VolkiharKnight;

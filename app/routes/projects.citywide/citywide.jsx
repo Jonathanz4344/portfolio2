@@ -330,11 +330,12 @@ export const Citywide = () => {
                           src={responsiveMobileImage}
                           alt="Citywide Eye Care mobile view"
                           sizes={`(max-width: ${media.mobile}px) 100vw, 50vw`}
+                          style={{ opacity: 1 }} /* Ensure mobile image is fully visible */
                         />
                       </div>
                     </ProjectTextRow>
 
-                    <ProjectTextRow justify="end" width="s">
+                    <ProjectTextRow justify="center" width="xl">
                       <ProjectSectionHeading level={4} as="h3">
                         Responsive Design
                       </ProjectSectionHeading>
@@ -376,7 +377,7 @@ export const Citywide = () => {
                       />
                     </ProjectTextRow>
 
-                    <ProjectTextRow justify="start" width="s">
+                    <ProjectTextRow justify="start" width="m">
                       <ProjectSectionHeading level={4} as="h3">
                         AI-Powered Chatbot
                       </ProjectSectionHeading>
@@ -424,7 +425,7 @@ export const Citywide = () => {
                       />
                     </ProjectTextRow>
 
-                    <ProjectTextRow justify="end" width="s">
+                    <ProjectTextRow justify="center" width="xl">
                       <ProjectSectionHeading level={4} as="h3">
                         Advanced Booking System
                       </ProjectSectionHeading>
@@ -486,3 +487,5 @@ export const Citywide = () => {
     </>
   );
 };
+
+export default Citywide;

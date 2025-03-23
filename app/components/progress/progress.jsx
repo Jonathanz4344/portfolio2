@@ -1,18 +1,16 @@
-import { useNavigation } from '@remix-run/react';
 import { useRef, useEffect, useState } from 'react';
 import styles from './progress.module.css';
 
-export function Progress() {
+export function Progress({ isAnimating = false }) {
   const [animationComplete, setAnimationComplete] = useState(false);
   const [visible, setVisible] = useState(false);
-  const { state } = useNavigation();
   const progressRef = useRef();
   const timeout = useRef(0);
 
   useEffect(() => {
     clearTimeout(timeout.current);
 
-    if (state !== 'idle') {
+    if (isAnimating) {
       timeout.current = setTimeout(() => {
         setVisible(true);
       }, 500);
@@ -21,14 +19,14 @@ export function Progress() {
         setVisible(false);
       }, 300);
     }
-  }, [state, animationComplete]);
+  }, [isAnimating, animationComplete]);
 
   useEffect(() => {
     if (!progressRef.current) return;
 
     const controller = new AbortController();
 
-    if (state !== 'idle') {
+    if (isAnimating) {
       return setAnimationComplete(false);
     }
 
@@ -44,12 +42,12 @@ export function Progress() {
     return () => {
       controller.abort();
     };
-  }, [state]);
+  }, [isAnimating]);
 
   return (
     <div
       className={styles.progress}
-      data-status={state}
+      data-status={isAnimating ? 'loading' : 'idle'}
       data-visible={visible}
       data-complete={animationComplete}
       ref={progressRef}

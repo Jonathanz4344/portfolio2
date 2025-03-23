@@ -8,7 +8,7 @@ import { Section } from '~/components/section';
 import { Text } from '~/components/text';
 import { useReducedMotion } from 'framer-motion';
 import { useWindowSize } from '~/hooks';
-import { Link as RouterLink, useLoaderData } from '@remix-run/react';
+import { Link as RouterLink } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { formatDate } from '~/utils/date';
 import { classes, cssProps } from '~/utils/style';
@@ -60,7 +60,7 @@ function ArticlesPost({ slug, frontmatter, timecode, index }) {
         <RouterLink
           unstable_viewTransition
           prefetch="intent"
-          to={`/articles/${slug}`}
+          to={`/articles.${slug}`}
           className={styles.postLink}
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
@@ -81,14 +81,14 @@ function ArticlesPost({ slug, frontmatter, timecode, index }) {
             </Text>
             <div className={styles.postFooter}>
               {featured && !!banner && (
-                <a href={resumePDF} download="Resume" target="blank">
-                  <Button secondary iconHoverShift as="div">
+                <RouterLink to="/articles.modern-styling-in-react">
+                  <Button secondary iconHoverShift as="span">
                     View CV
                   </Button>
-                </a>
+                </RouterLink>
               )}
               {!featured && banner && (
-                <Button secondary iconHoverShift icon="chevron-right" as="div">
+                <Button secondary iconHoverShift icon="chevron-right" as="span">
                   See more
                 </Button>
               )}
@@ -188,8 +188,63 @@ function SkeletonPost({ index }) {
   );
 }
 
+// Work experience data from resume
+const articlesData = {
+  posts: [
+    {
+      slug: 'work-experience-3',
+      timecode: '08:2024-05:2025',
+      frontmatter: {
+        title: 'Full Stack Engineer Intern @ Citywide Eye Care',
+        abstract: 'Engineered a React.js & Material-UI interface, developed a scalable inventory system using Python & PostgreSQL, optimized cloud deployment on AWS, implemented AWS Secrets Manager, and automated online form processing, accelerating data handling by 35%.',
+        date: '2024-08-01',
+        featured: false,
+        banner: '/static/hello-world-banner.jpg',
+        location: 'Great Neck, NY'
+      }
+    },
+    {
+      slug: 'work-experience-2',
+      timecode: '05:2024-07:2024',
+      frontmatter: {
+        title: 'Software Engineer Intern @ Citywide Eye Care',
+        abstract: 'Migrated the clinic\'s website from Google Sites to React.js, developed a responsive UI using React.js & Material-UI, integrated an automated appointment booking system, and enhanced user experience & navigation, leading to a 25% increase in patient appointments.',
+        date: '2024-05-01',
+        featured: false,
+        banner: '/static/hello-world-banner.jpg',
+        location: 'Great Neck, NY'
+      }
+    },
+    {
+      slug: 'work-experience-1',
+      timecode: '06:2023-08:2023',
+      frontmatter: {
+        title: 'Application Developer Intern @ ADP',
+        abstract: 'Designed and implemented an Automated Status Report, optimized CI/CD pipeline using Jenkins, enhanced MySQL database performance through query optimization, extracted and integrated data from AWS, Splunk, and Dynatrace, and automated manual workflows, increasing team productivity by 71%.',
+        date: '2023-06-01',
+        featured: false,
+        banner: '/static/hello-world-banner.jpg',
+        location: 'Roseland, NJ'
+      }
+    }
+  ],
+  featured: {
+    slug: 'work-experience-3',
+    timecode: '02:30:00:00',
+    frontmatter: {
+      title: 'Senior Developer at Enterprise',
+      abstract: 'Architected scalable solutions for enterprise clients.',
+      date: '2024-01-01',
+      featured: true,
+      banner: '/static/modern-styling-in-react-banner.jpg',
+      location: 'Remote'
+    }
+  }
+};
+
 export function Articles() {
-  const { posts, featured } = useLoaderData();
+  // Use the articlesData object directly
+  const { posts, featured } = articlesData;
   const { width } = useWindowSize();
   const singleColumnWidth = 1190;
   const isSingleColumn = width <= singleColumnWidth;
@@ -257,3 +312,6 @@ function Barcode({ className }) {
     </svg>
   );
 }
+
+// Add default export for the Articles component
+export default Articles;

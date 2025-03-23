@@ -3,7 +3,12 @@
     "baseUrl": ".",
     "paths": {
       "~/*": ["./app/*"]
-    }
+    },
+    "jsx": "react-jsx",
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "target": "ESNext",
+    "esModuleInterop": true
   },
-  "include": ["app", ".storybook/story-container.jsx"]
+  "include": ["app/**/*", "src/**/*"]
 }

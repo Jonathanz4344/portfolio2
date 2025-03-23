@@ -166,3 +166,6 @@ export const Uses = () => {
     </>
   );
 };
+
+// Add default export for the Uses component
+export default Uses;

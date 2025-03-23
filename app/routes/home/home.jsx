@@ -173,3 +173,6 @@ export const Home = () => {
     </div>
   );
 };
+
+// Add default export for the Home component
+export default Home;

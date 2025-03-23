@@ -1,16 +1,17 @@
-import { useRouteError } from '@remix-run/react';
+import { useEffect, useState } from 'react';
 import { Error } from '~/layouts/error';
 
-export async function loader() {
-  throw new Response(null, { status: 404, statusText: 'Not found' });
-}
+export default function NotFound() {
+  const [error, setError] = useState({
+    status: 404,
+    statusText: 'Not found',
+    data: null
+  });
 
-export const meta = () => {
-  return [{ title: '404 | Redacted' }];
-};
-
-export function ErrorBoundary() {
-  const error = useRouteError();
+  useEffect(() => {
+    // Set document title
+    document.title = '404 | Redacted';
+  }, []);
 
   return <Error error={error} />;
 }

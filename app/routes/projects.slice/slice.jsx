@@ -199,3 +199,6 @@ export const Slice = () => {
     </Fragment>
   );
 };
+
+// Add default export for the Slice component
+export default Slice;
