@@ -13,7 +13,7 @@ import { createCookieSessionStorage, json } from '@remix-run/cloudflare';
 import { ThemeProvider, themeStyles } from '~/components/theme-provider';
 import GothamBook from '~/assets/fonts/gotham-book.woff2';
 import GothamMedium from '~/assets/fonts/gotham-medium.woff2';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Error } from '~/layouts/error';
 import { VisuallyHidden } from '~/components/visually-hidden';
 import { Navbar } from '~/layouts/navbar';
@@ -78,17 +78,38 @@ export const loader = async ({ request, context }) => {
 };
 
 export default function App() {
-  let { canonicalUrl, theme } = useLoaderData();
+  const { canonicalUrl, theme: serverTheme } = useLoaderData();
+  const [theme, setTheme] = useState(serverTheme);
   const fetcher = useFetcher();
   const { state } = useNavigation();
 
-  if (fetcher.formData?.has('theme')) {
-    theme = fetcher.formData.get('theme');
-  }
+  // Update theme when form data changes (during theme toggle)
+  useEffect(() => {
+    if (fetcher.formData?.has('theme')) {
+      setTheme(fetcher.formData.get('theme'));
+    }
+  }, [fetcher.formData]);
+
+  // Check localStorage on client-side to handle Cloudflare cookie issues
+  useEffect(() => {
+    const storedTheme = localStorage.getItem('theme');
+    if (storedTheme && storedTheme !== theme) {
+      setTheme(storedTheme);
+    } else if (!storedTheme && theme) {
+      localStorage.setItem('theme', theme);
+    }
+  }, [theme]);
 
   function toggleTheme(newTheme) {
+    const nextTheme = newTheme ? newTheme : theme === 'dark' ? 'light' : 'dark';
+    
+    // Update localStorage immediately for client-side consistency
+    localStorage.setItem('theme', nextTheme);
+    setTheme(nextTheme);
+    
+    // Also update the server-side state via the API
     fetcher.submit(
-      { theme: newTheme ? newTheme : theme === 'dark' ? 'light' : 'dark' },
+      { theme: nextTheme },
       { action: '/api/set-theme', method: 'post' }
     );
   }

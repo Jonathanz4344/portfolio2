@@ -1,11 +1,12 @@
 @layer layout {
   .toggle {
-    --offset: var(--spaceXS);
+    --offset: 8px;
     --inset: calc(var(--spaceOuter) - var(--offset));
 
     position: fixed;
     top: var(--inset);
     right: var(--inset);
+    box-shadow: 0 0 0 1px var(--background);
     z-index: var(--zIndex4);
     display: none;
 
@@ -31,7 +32,7 @@
     transition-timing-function: var(--bezierFastoutSlowin);
     opacity: 1;
     transform: rotate(0deg);
-    fill: var(--textBody);
+    fill: var(--text);
     width: var(--iconSize);
     height: var(--iconSize);
 

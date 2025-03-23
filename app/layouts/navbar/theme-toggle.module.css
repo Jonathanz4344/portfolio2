@@ -1,6 +1,6 @@
 @layer layout {
   .toggle {
-    --offset: 6px;
+    --offset: 8px;
     --inset: calc(var(--spaceOuter) - var(--offset));
 
     position: fixed;
@@ -8,6 +8,7 @@
     top: var(--inset);
     right: var(--inset);
     transform: translate3d(0, 0, 0);
+    box-shadow: 0 0 0 1px var(--background);
 
     @media (--mediaMobile), (--mediaMobileLS) {
       &:not([data-mobile='true']) {
@@ -27,7 +28,7 @@
   }
 
   .circle {
-    fill: currentColor;
+    fill: var(--text);
     transform: scale(0.6);
     transform-origin: center;
 
@@ -70,7 +71,7 @@
   }
 
   .path {
-    stroke: currentColor;
+    stroke: var(--text);
     fill: none;
     stroke-linecap: round;
     stroke-width: 3;

@@ -1,13 +1,13 @@
 @layer layout {
   .navbar {
-    --headerNavFontSize: calc((16 / 16) * 1rem);
+    --headerNavFontSize: calc((18 / 16) * 1rem); /* Increased base font size */
 
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
     padding: 0;
-    width: var(--space2XL);
+    width: var(--space3XL); /* Increased width from 2XL to 3XL */
     position: fixed;
     top: var(--spaceOuter);
     left: var(--spaceOuter);
@@ -16,7 +16,7 @@
     isolation: isolate;
 
     @media (--mediaMobile) {
-      --headerNavFontSize: calc((22 / 16) * 1rem);
+      --headerNavFontSize: calc((24 / 16) * 1rem); /* Increased mobile font size */
     }
 
     @media (--mediaMobile), (--mediaMobileLS) {
@@ -41,7 +41,8 @@
     justify-content: space-between;
     align-items: center;
     flex: 1 1 auto;
-    max-width: var(--space2XL);
+    max-width: var(--space3XL); /* Increased from 2XL to 3XL */
+    width: 100%; /* Make nav take full width */
 
     @media (--mediaMobile), (--mediaMobileLS) {
       display: none;
@@ -54,24 +55,27 @@
     flex-direction: row-reverse;
     position: relative;
     writing-mode: vertical-lr;
+    width: 100%; /* Make navList take full width */
+    justify-content: center; /* Center the links */
   }
 
   .navLink {
-    padding: var(--spaceM);
-    color: color-mix(in lab, var(--text) 80%, transparent);
+    padding: var(--spaceL); /* Increased padding from M to L */
+    color: var(--textTitle);
     font-weight: var(--fontWeightMedium);
     font-size: var(--headerNavFontSize);
     text-decoration: none;
     position: relative;
     transition: color var(--durationS) ease 0.1s;
-    line-height: 1;
+    line-height: 1.2; /* Increased line height for better readability */
     display: inline-flex;
     align-items: center;
+    letter-spacing: 0.05em; /* Added letter spacing for better readability */
 
     &:hover,
     &:active,
     &[aria-current='page'] {
-      color: var(--textBody);
+      color: var(--text);
     }
 
     &::after {
@@ -79,8 +83,8 @@
       position: absolute;
       inset-inline-start: var(--spaceS);
       inset-inline-end: var(--spaceS);
-      block-size: 4px;
-      background: var(--accent);
+      block-size: 5px; /* Increased from 4px to 5px */
+      background: currentColor;
       transform: scaleY(0) translateZ(0);
       transform-origin: bottom;
     }
@@ -106,6 +110,8 @@
     justify-content: center;
     position: relative;
     z-index: var(--zIndex2);
+    width: 100%; /* Make icons container take full width */
+    padding: var(--spaceM) 0; /* Added padding top and bottom */
 
     @media (--mediaMobile), (--mediaMobileLS) {
       flex-direction: row;
@@ -127,23 +133,23 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: var(--spaceS);
-    width: var(--space3XL);
-    height: var(--space3XL);
-    color: var(--textLight);
+    padding: var(--spaceM); /* Increased from S to M */
+    width: 100%; /* Make icon link take full width */
+    height: var(--space4XL); /* Increased from 3XL to 4XL */
+    color: var(--textBody);
     transition: color var(--durationM) var(--bezierFastoutSlowin);
 
     &:hover,
     &:active {
-      color: var(--accent);
+      color: var(--text);
     }
   }
 
   .navIcon {
     fill: currentColor;
     transition: fill var(--durationM) ease;
-    width: 24px;
-    height: 24px;
+    width: 32px; /* Increased from 24px to 32px */
+    height: 32px; /* Increased from 24px to 32px */
   }
 
   .mobileNav {
@@ -151,7 +157,7 @@
 
     position: fixed;
     inset: 0;
-    background: color-mix(in lab, var(--background) 70%, transparent);
+    background: color-mix(in lab, var(--background) 90%, transparent);
     transform: translate3d(0, -100%, 0);
     transition-property: background;
     transition-duration: var(--durationL);
@@ -182,7 +188,7 @@
     text-align: center;
     text-decoration: none;
     color: var(--textBody);
-    padding: var(--spaceL);
+    padding: var(--spaceXL); /* Increased from L to XL */
     opacity: 0;
     transition-property: opacity;
     transition-duration: var(--durationS);
@@ -190,6 +196,7 @@
     transition-delay: var(--transitionDelay);
     position: relative;
     top: calc(var(--spaceM) * -1);
+    letter-spacing: 0.05em; /* Added letter spacing */
 
     @media (--mediaUseMotion) {
       transition-property: transform, opacity;
@@ -201,16 +208,16 @@
     }
 
     @media (--mediaMobileS), (max-height: 360px) {
-      --headerNavFontSize: calc((18 / 16) * 1rem);
+      --headerNavFontSize: calc((20 / 16) * 1rem); /* Increased from 18 to 20 */
     }
 
     &::after {
       content: '';
       position: absolute;
       top: 50%;
-      right: var(--space3XL);
-      left: var(--space3XL);
-      height: 4px;
+      right: var(--space4XL); /* Increased the space */
+      left: var(--space4XL); /* Increased the space */
+      height: 5px; /* Increased from 4px to 5px */
       background: var(--accent);
       transform: scaleX(0) translateY(-1px);
       transform-origin: right;

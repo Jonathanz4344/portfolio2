@@ -198,6 +198,7 @@ export const Navbar = () => {
   );
 };
 
+// Updated NavbarIcons with larger icons and better spacing
 const NavbarIcons = ({ desktop }) => (
   <div className={styles.navIcons}>
     {socialLinks.map(({ label, url, icon }) => (

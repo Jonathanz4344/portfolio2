@@ -339,15 +339,8 @@ export const Citywide = () => {
                         Responsive Design
                       </ProjectSectionHeading>
                       <ProjectSectionText>
-                        The website implements a comprehensive responsive design
-                        architecture that goes beyond simple media queries. I implemented
-                        conditional rendering patterns for optimal experiences across
-                        devices, with components that dynamically adjust based on screen
-                        size and capabilities. Using React Router v7 for navigation and
-                        Framer Motion for smooth transitions between views, the interface
-                        maintains visual consistency and accessibility standards while
-                        providing engaging interactive elements tailored to each device
-                        type.
+                        The website features a responsive design with conditional
+                        rendering for optimal performance across devices.
                       </ProjectSectionText>
                     </ProjectTextRow>
                   </ProjectSectionContent>
@@ -429,16 +422,9 @@ export const Citywide = () => {
                         Advanced Booking System
                       </ProjectSectionHeading>
                       <ProjectSectionText>
-                        The appointment booking system represents a complex integration
-                        challenge I solved by connecting to the practice&#39;s existing
-                        calendar through AWS Lambda functions and Express.js services.
-                        Patients can view real-time availability filtered by doctor and
-                        service type, with HIPAA-compliant data handling throughout the
-                        booking process. The system implements comprehensive form
-                        validation, sends automated email confirmations, and provides
-                        staff with a secure admin dashboard featuring React PDF Viewer for
-                        patient forms, significantly streamlining the practice&#39;s
-                        administrative workflow.
+                        I integrated the appointment system with the practice’s calendar
+                        using AWS Lambda and Express.js, enabling real-time availability
+                        by doctor and service.
                       </ProjectSectionText>
                     </ProjectTextRow>
                   </ProjectSectionContent>
