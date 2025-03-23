@@ -1,0 +1,93 @@
+@layer layout {
+  /* Custom styles for the resume page */
+  .resumeContent {
+    /* Increase line height for better readability */
+    --lineHeightBody: 1.8;
+  }
+
+  /* Enhance spacing between sections */
+  .resumeContent hr {
+    margin: var(--space4XL) 0;
+    border-top: 1px solid color-mix(in lab, var(--text) 30%, transparent);
+  }
+
+  /* Add extra spacing after horizontal rules */
+  .resumeContent hr + * {
+    margin-top: var(--space3XL) !important;
+  }
+
+  /* Improve heading styles */
+  .resumeContent h2 {
+    margin-top: var(--space3XL);
+    margin-bottom: var(--spaceXL);
+    color: var(--primary);
+    font-weight: var(--fontWeightBold);
+  }
+
+  .resumeContent h3 {
+    margin-top: var(--space2XL);
+    margin-bottom: var(--spaceL);
+    color: var(--text);
+  }
+
+  /* Enhance paragraph spacing */
+  .resumeContent p {
+    margin-bottom: var(--spaceL);
+  }
+
+  /* Improve list styling */
+  .resumeContent ul {
+    margin-top: var(--spaceL);
+    margin-bottom: var(--spaceXL);
+  }
+
+  .resumeContent li {
+    margin-bottom: var(--spaceS);
+    position: relative;
+  }
+
+  /* Style the contact section */
+  .resumeContent p:has(a) {
+    display: block;
+    margin-bottom: var(--spaceL);
+  }
+
+  /* Format links with proper underlines */
+  .resumeContent p a {
+    display: inline;
+    margin-right: var(--spaceL);
+    text-decoration: underline;
+  }
+
+  /* Add consistent spacing before horizontal rules */
+  .resumeContent * + hr {
+    margin-top: var(--space3XL) !important;
+  }
+
+  /* Add some emphasis to important text */
+  .resumeContent strong {
+    color: var(--primaryDark);
+    font-weight: var(--fontWeightBold);
+  }
+
+  /* Responsive adjustments */
+  @media (--mediaMobile) {
+    .resumeContent h2 {
+      margin-top: var(--space2XL);
+      margin-bottom: var(--spaceL);
+    }
+
+    .resumeContent h3 {
+      margin-top: var(--spaceXL);
+      margin-bottom: var(--spaceM);
+    }
+
+    .resumeContent hr {
+      margin: var(--space3XL) 0;
+    }
+    
+    .resumeContent hr + * {
+      margin-top: var(--space2XL) !important;
+    }
+  }
+}

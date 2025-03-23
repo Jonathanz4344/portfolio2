@@ -12,6 +12,7 @@ import { clamp } from '~/utils/clamp';
 import { formatDate } from '~/utils/date';
 import { cssProps, msToNum, numToMs } from '~/utils/style';
 import styles from './post.module.css';
+import resumeStyles from './resume.module.css';
 import { Link as RouterLink } from 'react-router-dom';
 
 export const Post = ({ children, title, date, banner, timecode }) => {
@@ -101,7 +102,11 @@ export const Post = ({ children, title, date, banner, timecode }) => {
         </header>
       </Section>
       <Section className={styles.wrapper} id="postContent" tabIndex={-1}>
-        <Text as="div" size="l" className={styles.content}>
+        <Text 
+          as="div" 
+          size="l" 
+          className={`${styles.content} ${title.includes('Jonathan Zhu') ? resumeStyles.resumeContent : ''}`}
+        >
           {children}
         </Text>
       </Section>

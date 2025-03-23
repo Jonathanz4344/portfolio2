@@ -116,7 +116,7 @@ function App() {
           <Route path="/articles.modern-styling-in-react" element={
             <MDXProvider components={postMarkdown}>
               <Post 
-                title="Modern Styling in React"
+                title="Jonathan Zhu"
                 date="2024-01-01"
                 banner="/static/modern-styling-in-react-banner.jpg"
                 timecode="01:30:00:00"

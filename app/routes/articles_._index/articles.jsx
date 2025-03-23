@@ -232,9 +232,9 @@ const articlesData = {
     slug: 'work-experience-3',
     timecode: '02:30:00:00',
     frontmatter: {
-      title: 'Senior Developer at Enterprise',
-      abstract: 'Architected scalable solutions for enterprise clients.',
-      date: '2024-01-01',
+      title: 'Jonathan Zhu',
+      abstract: 'Full Stack Engineer skilled in React.js, AWS, SQL, and AI technologies.',
+      date: '2025-03-19',
       featured: true,
       banner: '/static/modern-styling-in-react-banner.jpg',
       location: 'Remote'
